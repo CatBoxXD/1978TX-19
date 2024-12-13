@@ -459,7 +459,7 @@ construct = (a = 1) => {
 
   //// standard endings [win, lose, and by how much] :3
 
-  if (reeseWinner && aa[0].candidate == 153) {
+  if (reeseWinner && quickstats[1] >= 50) {
     one = true;
     e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
     <p>That was sure a campaign you ran there Reese. Despite many in the state party deeming it your election to win after such an impressive showing last election, Bush just wanted to steal the spotlight from you. Though that didn't happen and by the skin of your teeth you escaped a run-off primary, which no doubt would've helped Bush.</p><p>Going into the general election, it seemed the race to be much closer than anticipated. Not being surprising seeing as you and Hance agreed on a majority of issues, though not to the extent of your "firebrand" energy similar to Reagan. Both of you being able to jell a crowd, it wouldn't be until the votes in Odessa and Midland came through and gave you the win. Though now you'll be West Texas's next congressman. Quite the shoes to fill with Mahon's departure and with the region going more to the Republican's favor, you might be staying here for a while if you so choose to.</p><p>In other news, Clements has made history being the first Republican elected into the governor's office since 1874! Alongside that, Tower has been narrowly re-elected to a fourth term, Loeffler being elected into Krueger's 21st district after his depature for Senate, and former congressman Paul has been elected to the 22nd district after losing the general election to Gammage in 1976.</p>`)
@@ -467,7 +467,7 @@ construct = (a = 1) => {
     e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/JInoAh6.png'})])
   }
 
-  else if (reeseWinner && aa[0].candidate == 152) {
+  else if (reeseWinner && quickstats[1] < 50) {
     one = true;
     e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
     <p>This race was supposed to be a grab-in-the-bag situation. Showing Republicans and Democrats alike the need for a new outlook for West Texas after Mahon's long tenure. You scared him into retiring, and many within the state party basically gave you the go ahead for the next election.</p><p>That didn't happen however, with the young upstart Bush thinking he had a chance. You gave him a pounding, escaping a run-off primary that undoubtedly would've helped him. Going into the general election, it was close. You and Hance kept on wooing crowds and speaking to people, it could've gone either or. Unfortunately however, it seemed to have turned against you for whatever reason. Whether it be for being too much of a firebrand, party disunity, or not providing enough of a reason to elect you over Mahon's successor, you won't be West Texas's next congressman.</p><p>Despite this, there's a silver lining. Other Republicans have been able to win their respective elections. Clements for governor, Tower for senate, Loefller for the 21st, and Paul for the 22nd. Unfortunately you won't be a part of that.</p>`)
