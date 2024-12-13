@@ -54,11 +54,6 @@ document.head.appendChild(style_overwrite);
 
 campaignTrail_temp.cyoa = true
 
-function tunnel(new_q){
-    e = campaignTrail_temp;
-    return e.questions_json[e.questions_json.map(f=>f.pk).indexOf(new_q)];
-}
-
 bushWinner = false;
 reeseWinner = false;
 
