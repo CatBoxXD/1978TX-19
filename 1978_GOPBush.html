@@ -43,7 +43,14 @@ campaignTrail_temp.player_visits = [];
 campaignTrail_temp.answer_feedback_flg = 1;
 campaignTrail_temp.game_start_logging_id = '3662490';
 
-(function(e,t,n,r,i){function s(e,t,n,r){r=r instanceof Array?r:[];var i={};for(var s=0;s<r.length;s++){i[r[s]]=true}var o=function(e){this.element=e};o.prototype=n;e.fn[t]=function(){var n=arguments;var r=this;this.each(function(){var s=e(this);var u=s.data("plugin-"+t);if(!u){u=new o(s);s.data("plugin-"+t,u);if(u._init){u._init.apply(u,n)}}else if(typeof n[0]=="string"&&n[0].charAt(0)!="_"&&typeof u[n[0]]=="function"){var a=Array.prototype.slice.call(n,1);var f=u[n[0]].apply(u,a);if(n[0]in i){r=f}}});return r}}var o=810,u=810,a=10;var f={stateStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},stateHoverStyles:{fill:"#33c",stroke:"#000",scale:[1.1,1.1]},stateHoverAnimation:500,stateSpecificStyles:{},stateSpecificHoverStyles:{},click:null,mouseover:null,mouseout:null,clickState:{},mouseoverState:{},mouseoutState:{},showLabels:true,labelWidth:20,labelHeight:15,labelGap:6,labelRadius:3,labelBackingStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},labelBackingHoverStyles:{fill:"#33c",stroke:"#000"},stateSpecificLabelBackingStyles:{},stateSpecificLabelBackingHoverStyles:{},labelTextStyles:{fill:"#fff",stroke:"none","font-weight":300,"stroke-width":0,"font-size":"10px"},labelTextHoverStyles:{},stateSpecificLabelTextStyles:{},stateSpecificLabelTextHoverStyles:{}};var l={_init:function(t){this.options={};e.extend(this.options,f,t);var n=this.element.width();var i=this.element.height();var s=this.element.width()/o;var l=this.element.height()/u;this.scale=Math.min(s,l);this.labelAreaWidth=Math.ceil(a/this.scale);var c=o+Math.max(0,this.labelAreaWidth-a);this.paper=r(this.element.get(0),c,u);this.paper.setSize(n,i);this.paper.setViewBox(350,0,c,u,false);this.stateHitAreas={};this.stateShapes={};this.topShape=null;this._initCreateStates();this.labelShapes={};this.labelTexts={};this.labelHitAreas={};if(this.options.showLabels){this._initCreateLabels()}},_initCreateStates:function(){var t=this.options.stateStyles;var n=this.paper;var r={DS:"M 937.44681,23.995272 V 121.25296 H 1098.6734 V 23.664303 H 937.42317 Z",PM:"m 937.73641,121.80851 v 95.40189 h 94.89029 v -95.42254 h -94.89029 z",CT:"m 1033.168,122.12891 v 95.40625 h 96.4793 v -95.69141 h -96.4832 z",AD:"m 933.80469,607.73047 0.39385,93.10074 H 1089.519 v -93.02874 z",ET:"m 1075.2227,701.49219 v 94.20312 h -7.4727 l -9.9375,-33.00781 V 758.25 l 7.375,-3.25 5.375,-5.375 v -2.0625 H 1069.5 l -0.4314,-1.6099 -0.4093,1.52759 h -5.0343 l -0.5,-3.41769 -1.0034,3.74461 -7.2466,3.06789 v 3 l 1.0625,3.5625 v 3.4375 l -7,0.4375 -12.6725,-40.19617 v -3.57973 l 2.4176,-1.39581 -3.922,-14.63719 z",MD:"m 1075.7813,701.61328 v 93.90395 l 93.3437,-0.36098 v -93.85938 l -93.3398,0.0742 z",MT:"m 1090.0547,607.93359 v 92.82032 h 94.6585 v -93.34766 l -94.6197,0.42937 z",DW:"m 1090.9102,513.625 1.0117,93.61719 57.0859,-0.27344 -7.0703,-28.78125 -2.9375,-4.875 V 569.75 h 1.75 v -4.5 h -1.3125 l 0.625,-0.75 21.1192,-5.65888 2.3808,5.90888 22.476,-6.02243 -0.601,-46.35257 -94.543,0.93359 z",GN:"m 933.79687,513.90234 0.11441,93.30351 H 1091.375 l -1.0078,-93.90116 -156.57033,0.5039 z",TR:"m 1020.2109,420.02734 0.012,93.47266 95.4023,-1 v -92.55591 h -95.4023 z",YK:"m 934.98047,419.78125 -1.025,93.48988 h 85.73203 v -93.54847 h -84.71003 z",LB:"m 1113.1953,324.74609 1.7685,94.68977 93.8487,-1.09211 0.6826,-94.70982 -96.2998,0.91685 z",HE:"m 1112.2695,218.32812 0.5938,105.6836 96.8196,-0.95231 -1.4954,-105.04379 -95.9141,0.0586 z",LM:"m 1015.9844,217.87891 v 106.17487 h 96.3388 l -0.5849,-105.99128 z",BE:"m 936.86719,217.85547 v 106.61815 h 78.58231 V 217.74219 h -78.58622 z",HY:"m 1016.1016,324.78125 3.789,94.62109 h 94.5318 l -1.7622,-94.80859 h -96.5665 z",CN:"m 936.57812,325 -1.25263,94.18174 h 84.01821 l -3.7616,-94.16674 z"};var i={};for(var s in r){i={};if(this.options.stateSpecificStyles[s]){e.extend(i,t,this.options.stateSpecificStyles[s])}else{i=t}this.stateShapes[s]=n.path(r[s]).attr(i);this.topShape=this.stateShapes[s];this.stateHitAreas[s]=n.path(r[s]).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.stateHitAreas[s].node.dataState=s}this._onClickProxy=e.proxy(this,"_onClick");this._onMouseOverProxy=e.proxy(this,"_onMouseOver"),this._onMouseOutProxy=e.proxy(this,"_onMouseOut");for(var s in this.stateHitAreas){this.stateHitAreas[s].toFront();e(this.stateHitAreas[s].node).bind("mouseout",this._onMouseOutProxy);e(this.stateHitAreas[s].node).bind("click",this._onClickProxy);e(this.stateHitAreas[s].node).bind("mouseover",this._onMouseOverProxy)}},_initCreateLabels:function(){var t=this.paper;var n=["DS", "PM", "CT", "BE", "LM", "HE", "CN", "HY", "LB", "YK", "TR", "GN", "DW", "AD", "MT", "ET", "MD"];var r=1700;var i=230;var s=this.options.labelWidth;var o=this.options.labelHeight;var u=this.options.labelGap;var a=this.options.labelRadius;var f=s/this.scale;var l=o/this.scale;var c=(s+u)/this.scale;var h=(o+u)/this.scale*.5;var p=a/this.scale;var d=this.options.labelBackingStyles;var v=this.options.labelTextStyles;var m={};for(var g=0,y,b,w;g<n.length;++g){w=n[g];y=(g+1)%2*c+r;b=g*h+i;m={};if(this.options.stateSpecificLabelBackingStyles[w]){e.extend(m,d,this.options.stateSpecificLabelBackingStyles[w])}else{m=d}this.labelShapes[w]=t.rect(y,b,f,l,p).attr(m);m={};if(this.options.stateSpecificLabelTextStyles[w]){e.extend(m,v,this.options.stateSpecificLabelTextStyles[w])}else{e.extend(m,v)}if(m["font-size"]){m["font-size"]=parseInt(m["font-size"])/this.scale+"px"}this.labelTexts[w]=t.text(y+f/2,b+l/2,w).attr(m);this.labelHitAreas[w]=t.rect(y,b,f,l,p).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.labelHitAreas[w].node.dataState=w}for(var w in this.labelHitAreas){this.labelHitAreas[w].toFront();e(this.labelHitAreas[w].node).bind("mouseout",this._onMouseOutProxy);e(this.labelHitAreas[w].node).bind("click",this._onClickProxy);e(this.labelHitAreas[w].node).bind("mouseover",this._onMouseOverProxy)}},_getStateFromEvent:function(e){var t=e.target&&e.target.dataState||e.dataState;return this._getState(t)},_getState:function(e){var t=this.stateShapes[e];var n=this.stateHitAreas[e];var r=this.labelShapes[e];var i=this.labelTexts[e];var s=this.labelHitAreas[e];return{shape:t,hitArea:n,name:e,labelBacking:r,labelText:i,labelHitArea:s}},_onMouseOut:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseout",e,t)},_defaultMouseOutAction:function(t){var n={};if(this.options.stateSpecificStyles[t.name]){e.extend(n,this.options.stateStyles,this.options.stateSpecificStyles[t.name])}else{n=this.options.stateStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingStyles[t.name]){e.extend(n,this.options.labelBackingStyles,this.options.stateSpecificLabelBackingStyles[t.name])}else{n=this.options.labelBackingStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_onClick:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("click",e,t)},_onMouseOver:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseover",e,t)},_defaultMouseOverAction:function(t){this.bringShapeToFront(t.shape);this.paper.safari();var n={};if(this.options.stateSpecificHoverStyles[t.name]){e.extend(n,this.options.stateHoverStyles,this.options.stateSpecificHoverStyles[t.name])}else{n=this.options.stateHoverStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingHoverStyles[t.name]){e.extend(n,this.options.labelBackingHoverStyles,this.options.stateSpecificLabelBackingHoverStyles[t.name])}else{n=this.options.labelBackingHoverStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_triggerEvent:function(t,n,r){var i=r.name;var s=false;var o=e.Event("usmap"+t+i);o.originalEvent=n;if(this.options[t+"State"][i]){s=this.options[t+"State"][i](o,r)===false}if(o.isPropagationStopped()){this.element.trigger(o,[r]);s=s||o.isDefaultPrevented()}if(!o.isPropagationStopped()){var u=e.Event("usmap"+t);u.originalEvent=n;if(this.options[t]){s=this.options[t](u,r)===false||s}if(!u.isPropagationStopped()){this.element.trigger(u,[r]);s=s||u.isDefaultPrevented()}}if(!s){switch(t){case"mouseover":this._defaultMouseOverAction(r);break;case"mouseout":this._defaultMouseOutAction(r);break}}return!s},trigger:function(e,t,n){t=t.replace("usmap","");e=e.toUpperCase();var r=this._getState(e);this._triggerEvent(t,n,r)},bringShapeToFront:function(e){if(this.topShape){e.insertAfter(this.topShape)}this.topShape=e}};var c=[];s(e,"usmap",l,c)})(jQuery,document,window,Raphael)
+const style_overwrite = document.createElement("style");
+    style_overwrite.innerHTML = 
+        `#campaign_sign {
+            background-color: #b33939;
+            border-color: #44569c;
+        }`
+        ;
+document.head.appendChild(style_overwrite);
 
 campaignTrail_temp.cyoa = true
 
@@ -59,9 +66,11 @@ var primaryProcess = -5;
 
 cyoAdventure = function (a) {
 ans = campaignTrail_temp.player_answers[campaignTrail_temp.player_answers.length - 1]
+//// getting the VP thing to show up in the game
 if (e.question_number == 9) {
     window.setTimeout(e.vpSwitcher, 20)
 }
+//// this is for during the first part of the mod and you have to try and win the primary. i believe its easy enough to get, with it being you have to intentionally do things to harm yourself to get the Sheats path :p
 //// Q1
 if (ans == 4411) {
     primaryProcess += 2
@@ -146,6 +155,7 @@ if (ans == 4491) {
 if (ans == 4532) {
     primaryProcess += 1
 }
+//// this part involves actually getting either Bush or Reese. if you have greater than or equal to 2 you get Bush, less than or equal to 1 you get Reese
 if ((primaryProcess >= 2)) {
     campaignTrail_temp.questions_json[9] = {
     "model": "campaign_trail.question",
@@ -372,3 +382,155 @@ e.vpSwitcher = () => {
         changeGameDisp(false);
     })
   }
+
+// constructs endings based on header and pages
+construct = (a = 1) => {
+	
+    e.page = e.page + a < e.pages.length ? e.page + a : 0
+    let html = e.header;
+    html += e.pages[e.page] + "<br>";
+    if (e.page > 0) {
+    
+    html += `<button onclick='endingConstructor(a = -1)'>Back</button>`
+    }
+    if (e.page < e.pages.length - 1) {
+    
+    html += `<button onclick='endingConstructor(a = 1)'>Next</button>`
+    }
+    
+    for (i in e.executable) {
+    if (e.executable[i][0] == e.page) {
+        e.executable[i][1]();
+      
+    }
+    }
+    
+    if (e.image == true)
+  setTimeout(()=>{
+    candImg = $(".person_image")[0]
+    if (candImg) {
+      candImg.remove()
+    console.log("TRYING");
+    console.log("RESULTS UPDATED");
+    }
+  }, 10)
+  else if (e.image)
+  setTimeout(()=>{
+    candImg = $(".person_image")[0];
+    if (candImg) {
+      candImg.src = e.image;
+    console.log("TRYING");
+    console.log("RESULTS UPDATED");
+    }		
+  }, 10)
+  
+  return html;
+  }
+    
+  endingConstructor = (a = 1) => {
+    $("#final_results_description")[0].innerHTML = construct(a);
+  }
+
+    // ENDINGS -- this is slightly more reliable than the ending code method
+    
+    e.multiple_endings = true;
+    
+    e.header = "<h1>error</h1>";
+    e.pages = ["<p>This is an error handler</p>"];
+    e.page = 0;
+    
+  
+  var one = false;
+    endingPicker = (out, totv, aa, quickstats) => {
+    //out = "win", "loss", or "tie" for your candidate
+    //totv = total votes in entire election
+    //aa = all final overall results data
+    //quickstat = relevant data on candidate performance (format: your candidate's electoral vote count, your candidate's popular vote share, your candidate's raw vote total)
+    
+    /*
+    e.header = "<h2></h2>"
+    e.pages = ["<p></p>",
+            "<p></p>"]
+    */
+  
+    e.pages = []
+    e.header = "";
+    e.executable = []
+
+  //// standard endings [win, lose, and by how much] :3
+
+  if (reeseWinner && aa[0].candidate == 153) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>That was sure a campaign you ran there Reese. Despite many in the state party deeming it your election to win after such an impressive showing last election, Bush just wanted to steal the spotlight from you. Though that didn't happen and by the skin of your teeth you escaped a run-off primary, which no doubt would've helped Bush.</p><p>Going into the general election, it seemed the race to be much closer than anticipated. Not being surprising seeing as you and Hance agreed on a majority of issues, though not to the extent of your "firebrand" energy similar to Reagan. Both of you being able to jell a crowd, it wouldn't be until the votes in Odessa and Midland came through and gave you the win. Though now you'll be West Texas's next congressman. Quite the shoes to fill with Mahon's departure and with the region going more to the Republican's favor, you might be staying here for a while if you so choose to.</p><p>In other news, Clements has made history being the first Republican elected into the governor's office since 1874! Alongside that, Tower has been narrowly re-elected to a fourth term, Loeffler being elected into Krueger's 21st district after his depature for Senate, and former congressman Paul has been elected to the 22nd district after losing the general election to Gammage in 1976.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/JInoAh6.png'})])
+  }
+
+  else if (reeseWinner && aa[0].candidate == 152) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>This race was supposed to be a grab-in-the-bag situation. Showing Republicans and Democrats alike the need for a new outlook for West Texas after Mahon's long tenure. You scared him into retiring, and many within the state party basically gave you the go ahead for the next election.</p><p>That didn't happen however, with the young upstart Bush thinking he had a chance. You gave him a pounding, escaping a run-off primary that undoubtedly would've helped him. Going into the general election, it was close. You and Hance kept on wooing crowds and speaking to people, it could've gone either or. Unfortunately however, it seemed to have turned against you for whatever reason. Whether it be for being too much of a firebrand, party disunity, or not providing enough of a reason to elect you over Mahon's successor, you won't be West Texas's next congressman.</p><p>Despite this, there's a silver lining. Other Republicans have been able to win their respective elections. Clements for governor, Tower for senate, Loefller for the 21st, and Paul for the 22nd. Unfortunately you won't be a part of that.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/zVP7ze6.png'})])
+  }
+
+  else if (bushWinner && quickstats[1] >= 54.00) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>This is definitely great news. It seems the constant attacks on your background and character simply didn't stick to you. Reese, Hickox, and Hance tried throwing eggs to see what sticks, and ultimately couldn't find a good enough point of attack on your candidacy.</p><p>Republicans, both in-state and out-of-state are ecstatic at this news. Its no secret some saw your candidacy as one with potential, but ultimately getting in the way of the "rightful" candidate in Reese. You changed that perception, worked nonstop to make your candidacy crystal clear, and the work of your labor has paid off. Change out that lousy suit and haircut, because you'll be West Texas's next congressman!</p><p>Hance gives his concession, and looks to his future prospects in politics. As for you, some are seeing you as one of the Texas GOP's rising stars. You're invited to meet with the governor-elect Clements and Senator Tower, perhaps your political future has just started...</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/SaATAB3.png'})])
+  }
+
+  else if (bushWinner && quickstats[1] >= 51.00 && quickstats[1] <= 53.99) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>While many onlookers saw this race as a toss-up, many secretly suspected Hance to even out the odds with his home-grown status and history with the people. You've broken that idea and have been able to win by a respectable margin, especially impressive after all the attacks on your character and morals.</p><p>To say Hance is shocked by this victory, and furthermore the Democrats, is an understatement. Though with the war chest you accumulated from outside interests and a party correctly seeing this as a flip-worthy district, maybe this shouldn't be all too surprising. Hance, for his part, gives his concession speech, and one that is polite. Get yourself a new suit and get a fresh haircut, because you'll be West Texas's next congressman!</p><p>You can't help but feel joy as you look at the latest edition of a newspaper. Covering Clements victory in the gubernatorial race is a nearby section about you: <b><i>Bush Junior, Political Novice Turns Natural With Upending of 40 Years of Democrat Representation.</i></b></p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/HXQ6xWZ.png'})])
+  }
+
+  else if (bushWinner && quickstats[1] >= 50.00 && quickstats[1] <= 50.99) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>You've done it! Despite the trials and tribulations you went through, you've gotten here and victory has never seemed so sweet. From the primary election and your opponents attacking your background and character, to the general election with Hance shrewdly attacking your candidacy in all sorts of ways. Through it all, you've beat them all and will be West Texas's next congressman.</p><p>While Hance is disappointed at not being to take up the mantle of Mahon, he gracefully concedes the election to you. Though not without dealing one final blow: "... but that reminds me of something. A shopkeeper from Dimmitt and I were chatting, and having a grand old time. Though he told me he was going out of business. I ask why, and he told me some out-of-towners were stealing his customers. They were driving a nice fine car, with Connecticut plates..." You can't help but let out a chuckle.</p><p>In great news, House candidates such as Loeffler and Paul have won their elections, Clements has won the governor's office, and Tower is going back for a fourth term. Such great news.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/nRndrnv.png'})])
+  }
+
+  else if (bushWinner && quickstats[1] >= 48.00 && quickstats[1] <= 49.99) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>You gave it your all, and perhaps this was as good as you were going to do. All things considered, you did as good as you could. Even getting into a run-off and one-upping the heir-apparent to the party's candidacy is an achievement in of itself.</p><p>It just seems you couldn't withstand the nature of politics. Your idea of speaking to the people of West Texas on the issues plaquing them, while indeed noble, couldn't address the critical attack at your campaign: your perceived out-of-touchness. Couple that with Hance's shrewd tactics and being a "good ol' boy", you certainly did as good as you reasonably could.</p><p>You give a concession speech, harping on the idea of "two good men running for office". Though not all is bad, as Clements has won the governor's office, Tower will be going back with a fourth term, and a couple of Republicans won House races. While you'll be going back to the oil industry, perhaps your political aspirations won't end here...</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/XtGDH4Z.png'})])
+  }
+
+  else if (bushWinner && quickstats[1] >= 45.00 && quickstats[1] <= 47.99) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>The attacks you've faced throughout the campaign. Your education from Yale, your Connecticut upbringing, your father's association with the Trilateral Commission, and being perceived as an "out-of-touch" carpetbagger. All of this and more has culminated in this defeat from Hance, and some seem to not be surprised.</p><p>You certainly had the connections and background for potential. After all, you were able to up end an established candidate like Reese. Outside of that however, you just couldn't keep up with Hance. Not necessarily because you were aloof, far from it actually with your round-the-clock campaigning in West Texas. It just seems like you weren't willing to "get down in the dirt" with Hance and fight harder against these claims. It's all over however, and you give a concession speech.</p><p>Despite this unfortunate ending, its not all bad. Clements is now governor-elect and Tower will be going to the Senate with a fourth term, alongside House victories. Its unfortunate you won't be among them, but perhaps this isn't the end of your political aspirations...</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/HBkT4e0.png'})])
+  }
+
+  else if (bushWinner && quickstats[1] >= 0.00 && quickstats[1] <= 44.99) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>It just seemed like a constant onslaught of attacks. First it was in the primary election, with Reese and Hickox questioning your conservative loyalties and attacking your family and character. Then it was in the general election with Hance turning up his charm to a whole new level. You may have had the looks, but Hance knew his way around these parts.</p><p>You had a massive war chest, at least comparatively to Hance, but it didn't prove useful in the slightest. As Hance kept on speaking on more his history than actual policy, you seemed like a brainiac with all these numbers and percentages. The people of West Texas didn't want to hear that, or at least a large majority didn't want to. They wanted one of their own and despite your constant lifting of your upbringing in Midland, it seems like you just weren't the congressman they wanted.</p><p>While local party people commend you for the work you put into this district, it seems like they're moving on from you. Instead looking to celebrate alongside Loeffler, Paul, Tower, and Clements. Don't worry about all that however. This is just a setback, and maybe once you recalibrate you'll show them all wrong and be a real winner...</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/OFn32nX.png'})])
+  }
+
+  else {
+    one = true;
+    e.pages = ["<p>one</p><p>two</p><p>three</p><p>four</p><p>five</p><p>six</p><p>seven</p><p>eight</p>", "<p>nine</p><p>ten</p><p>eleven</p><p>twelve</p><p>thirteen</p><p>fourteen</p><p>fifteen</p><p>sixteen</p>", "<p>seventeen</p><p>eighteen</p><p>nineteen</p><p>twenty</p><p>twentyone</p><p>twentytwo</p><p>twentythree</p><p>twentyfour</p>", "<p>twentyfive</p><p>twentysix</p><p>twentyseven</p><p>twentyeight</p><p>twentynine</p><p>thirty</p><p>thirtyone</p><p>thirtytwo</p>", "<p>thirtythree</p><p>thirtyfour</p><p>thirtyfive</p><p>thirtysix</p><p>thirtyseven</p><p>thirtyeight</p><p>thirtynine</p><p>fourty</p>", "<p>fourtyone</p><p>fourtytwo</p><p>fourtythree</p><p>fourtyfour</p><p>fourtyfive</p><p>fourtysix</p><p>fourtyseven</p><p>fourtyeight</p>", "<p>fourtynine</p><p>fifty</p><p>fiftyone</p><p>fiftytwo</p><p>fiftythree</p><p>fiftyfour</p><p>fiftyfive</p><p>fiftysix</p>", "<p>fiftyseven</p><p>fiftyeight</p><p>fiftynine</p><p>sixty</p><p>sixtyone</p><p>sixtytwo</p><p>sixtythree</p><p>sixtyfour</p>", "<p>sixtyfive</p><p>sixtysix</p><p>sixtyseven</p><p>sixtyeight</p><p>sixtynine</p><p>seventy</p><p>seventyone</p><p>seventytwo</p>", "<p>seventythree</p><p>seventyfour</p><p>seventyfive</p><p>seventysix</p><p>seventyseven</p><p>seventyeight</p><p>seventynine</p><p>eighty</p>", "<p>eightyone</p><p>eightytwo</p><p>eightythree</p><p>eightyfour</p><p>eightyfive</p><p>eightysix</p><p>eightyseven</p><p>eightyeight</p>", "<p>eightynine</p><p>ninety</p><p>ninetyone</p><p>ninetytwo</p><p>ninetythree</p><p>ninetyfour</p><p>ninetyfive</p><p>ninetysix</p>", "<p>ninetyseven</p><p>ninetyeight</p><p>ninetynine</p><p>onehundred</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>", "<p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>", "<p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>", "<p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>"];
+    e.executable.push([0, (() => {e.image = e.image = ''})])
+  }
+  
+  return construct(0);
+    
+}
+
+(function(e,t,n,r,i){function s(e,t,n,r){r=r instanceof Array?r:[];var i={};for(var s=0;s<r.length;s++){i[r[s]]=true}var o=function(e){this.element=e};o.prototype=n;e.fn[t]=function(){var n=arguments;var r=this;this.each(function(){var s=e(this);var u=s.data("plugin-"+t);if(!u){u=new o(s);s.data("plugin-"+t,u);if(u._init){u._init.apply(u,n)}}else if(typeof n[0]=="string"&&n[0].charAt(0)!="_"&&typeof u[n[0]]=="function"){var a=Array.prototype.slice.call(n,1);var f=u[n[0]].apply(u,a);if(n[0]in i){r=f}}});return r}}var o=810,u=810,a=10;var f={stateStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},stateHoverStyles:{fill:"#33c",stroke:"#000",scale:[1.1,1.1]},stateHoverAnimation:500,stateSpecificStyles:{},stateSpecificHoverStyles:{},click:null,mouseover:null,mouseout:null,clickState:{},mouseoverState:{},mouseoutState:{},showLabels:true,labelWidth:20,labelHeight:15,labelGap:6,labelRadius:3,labelBackingStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},labelBackingHoverStyles:{fill:"#33c",stroke:"#000"},stateSpecificLabelBackingStyles:{},stateSpecificLabelBackingHoverStyles:{},labelTextStyles:{fill:"#fff",stroke:"none","font-weight":300,"stroke-width":0,"font-size":"10px"},labelTextHoverStyles:{},stateSpecificLabelTextStyles:{},stateSpecificLabelTextHoverStyles:{}};var l={_init:function(t){this.options={};e.extend(this.options,f,t);var n=this.element.width();var i=this.element.height();var s=this.element.width()/o;var l=this.element.height()/u;this.scale=Math.min(s,l);this.labelAreaWidth=Math.ceil(a/this.scale);var c=o+Math.max(0,this.labelAreaWidth-a);this.paper=r(this.element.get(0),c,u);this.paper.setSize(n,i);this.paper.setViewBox(350,0,c,u,false);this.stateHitAreas={};this.stateShapes={};this.topShape=null;this._initCreateStates();this.labelShapes={};this.labelTexts={};this.labelHitAreas={};if(this.options.showLabels){this._initCreateLabels()}},_initCreateStates:function(){var t=this.options.stateStyles;var n=this.paper;var r={DS:"M 937.44681,23.995272 V 121.25296 H 1098.6734 V 23.664303 H 937.42317 Z",PM:"m 937.73641,121.80851 v 95.40189 h 94.89029 v -95.42254 h -94.89029 z",CT:"m 1033.168,122.12891 v 95.40625 h 96.4793 v -95.69141 h -96.4832 z",AD:"m 933.80469,607.73047 0.39385,93.10074 H 1089.519 v -93.02874 z",ET:"m 1075.2227,701.49219 v 94.20312 h -7.4727 l -9.9375,-33.00781 V 758.25 l 7.375,-3.25 5.375,-5.375 v -2.0625 H 1069.5 l -0.4314,-1.6099 -0.4093,1.52759 h -5.0343 l -0.5,-3.41769 -1.0034,3.74461 -7.2466,3.06789 v 3 l 1.0625,3.5625 v 3.4375 l -7,0.4375 -12.6725,-40.19617 v -3.57973 l 2.4176,-1.39581 -3.922,-14.63719 z",MD:"m 1075.7813,701.61328 v 93.90395 l 93.3437,-0.36098 v -93.85938 l -93.3398,0.0742 z",MT:"m 1090.0547,607.93359 v 92.82032 h 94.6585 v -93.34766 l -94.6197,0.42937 z",DW:"m 1090.9102,513.625 1.0117,93.61719 57.0859,-0.27344 -7.0703,-28.78125 -2.9375,-4.875 V 569.75 h 1.75 v -4.5 h -1.3125 l 0.625,-0.75 21.1192,-5.65888 2.3808,5.90888 22.476,-6.02243 -0.601,-46.35257 -94.543,0.93359 z",GN:"m 933.79687,513.90234 0.11441,93.30351 H 1091.375 l -1.0078,-93.90116 -156.57033,0.5039 z",TR:"m 1020.2109,420.02734 0.012,93.47266 95.4023,-1 v -92.55591 h -95.4023 z",YK:"m 934.98047,419.78125 -1.025,93.48988 h 85.73203 v -93.54847 h -84.71003 z",LB:"m 1113.1953,324.74609 1.7685,94.68977 93.8487,-1.09211 0.6826,-94.70982 -96.2998,0.91685 z",HE:"m 1112.2695,218.32812 0.5938,105.6836 96.8196,-0.95231 -1.4954,-105.04379 -95.9141,0.0586 z",LM:"m 1015.9844,217.87891 v 106.17487 h 96.3388 l -0.5849,-105.99128 z",BE:"m 936.86719,217.85547 v 106.61815 h 78.58231 V 217.74219 h -78.58622 z",HY:"m 1016.1016,324.78125 3.789,94.62109 h 94.5318 l -1.7622,-94.80859 h -96.5665 z",CN:"m 936.57812,325 -1.25263,94.18174 h 84.01821 l -3.7616,-94.16674 z"};var i={};for(var s in r){i={};if(this.options.stateSpecificStyles[s]){e.extend(i,t,this.options.stateSpecificStyles[s])}else{i=t}this.stateShapes[s]=n.path(r[s]).attr(i);this.topShape=this.stateShapes[s];this.stateHitAreas[s]=n.path(r[s]).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.stateHitAreas[s].node.dataState=s}this._onClickProxy=e.proxy(this,"_onClick");this._onMouseOverProxy=e.proxy(this,"_onMouseOver"),this._onMouseOutProxy=e.proxy(this,"_onMouseOut");for(var s in this.stateHitAreas){this.stateHitAreas[s].toFront();e(this.stateHitAreas[s].node).bind("mouseout",this._onMouseOutProxy);e(this.stateHitAreas[s].node).bind("click",this._onClickProxy);e(this.stateHitAreas[s].node).bind("mouseover",this._onMouseOverProxy)}},_initCreateLabels:function(){var t=this.paper;var n=["DS", "PM", "CT", "BE", "LM", "HE", "CN", "HY", "LB", "YK", "TR", "GN", "DW", "AD", "MT", "ET", "MD"];var r=1700;var i=230;var s=this.options.labelWidth;var o=this.options.labelHeight;var u=this.options.labelGap;var a=this.options.labelRadius;var f=s/this.scale;var l=o/this.scale;var c=(s+u)/this.scale;var h=(o+u)/this.scale*.5;var p=a/this.scale;var d=this.options.labelBackingStyles;var v=this.options.labelTextStyles;var m={};for(var g=0,y,b,w;g<n.length;++g){w=n[g];y=(g+1)%2*c+r;b=g*h+i;m={};if(this.options.stateSpecificLabelBackingStyles[w]){e.extend(m,d,this.options.stateSpecificLabelBackingStyles[w])}else{m=d}this.labelShapes[w]=t.rect(y,b,f,l,p).attr(m);m={};if(this.options.stateSpecificLabelTextStyles[w]){e.extend(m,v,this.options.stateSpecificLabelTextStyles[w])}else{e.extend(m,v)}if(m["font-size"]){m["font-size"]=parseInt(m["font-size"])/this.scale+"px"}this.labelTexts[w]=t.text(y+f/2,b+l/2,w).attr(m);this.labelHitAreas[w]=t.rect(y,b,f,l,p).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.labelHitAreas[w].node.dataState=w}for(var w in this.labelHitAreas){this.labelHitAreas[w].toFront();e(this.labelHitAreas[w].node).bind("mouseout",this._onMouseOutProxy);e(this.labelHitAreas[w].node).bind("click",this._onClickProxy);e(this.labelHitAreas[w].node).bind("mouseover",this._onMouseOverProxy)}},_getStateFromEvent:function(e){var t=e.target&&e.target.dataState||e.dataState;return this._getState(t)},_getState:function(e){var t=this.stateShapes[e];var n=this.stateHitAreas[e];var r=this.labelShapes[e];var i=this.labelTexts[e];var s=this.labelHitAreas[e];return{shape:t,hitArea:n,name:e,labelBacking:r,labelText:i,labelHitArea:s}},_onMouseOut:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseout",e,t)},_defaultMouseOutAction:function(t){var n={};if(this.options.stateSpecificStyles[t.name]){e.extend(n,this.options.stateStyles,this.options.stateSpecificStyles[t.name])}else{n=this.options.stateStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingStyles[t.name]){e.extend(n,this.options.labelBackingStyles,this.options.stateSpecificLabelBackingStyles[t.name])}else{n=this.options.labelBackingStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_onClick:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("click",e,t)},_onMouseOver:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseover",e,t)},_defaultMouseOverAction:function(t){this.bringShapeToFront(t.shape);this.paper.safari();var n={};if(this.options.stateSpecificHoverStyles[t.name]){e.extend(n,this.options.stateHoverStyles,this.options.stateSpecificHoverStyles[t.name])}else{n=this.options.stateHoverStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingHoverStyles[t.name]){e.extend(n,this.options.labelBackingHoverStyles,this.options.stateSpecificLabelBackingHoverStyles[t.name])}else{n=this.options.labelBackingHoverStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_triggerEvent:function(t,n,r){var i=r.name;var s=false;var o=e.Event("usmap"+t+i);o.originalEvent=n;if(this.options[t+"State"][i]){s=this.options[t+"State"][i](o,r)===false}if(o.isPropagationStopped()){this.element.trigger(o,[r]);s=s||o.isDefaultPrevented()}if(!o.isPropagationStopped()){var u=e.Event("usmap"+t);u.originalEvent=n;if(this.options[t]){s=this.options[t](u,r)===false||s}if(!u.isPropagationStopped()){this.element.trigger(u,[r]);s=s||u.isDefaultPrevented()}}if(!s){switch(t){case"mouseover":this._defaultMouseOverAction(r);break;case"mouseout":this._defaultMouseOutAction(r);break}}return!s},trigger:function(e,t,n){t=t.replace("usmap","");e=e.toUpperCase();var r=this._getState(e);this._triggerEvent(t,n,r)},bringShapeToFront:function(e){if(this.topShape){e.insertAfter(this.topShape)}this.topShape=e}};var c=[];s(e,"usmap",l,c)})(jQuery,document,window,Raphael)
