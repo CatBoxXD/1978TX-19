@@ -43,14 +43,15 @@ campaignTrail_temp.player_visits = [];
 campaignTrail_temp.answer_feedback_flg = 1;
 campaignTrail_temp.game_start_logging_id = '3662479';
 
-(function(e,t,n,r,i){function s(e,t,n,r){r=r instanceof Array?r:[];var i={};for(var s=0;s<r.length;s++){i[r[s]]=true}var o=function(e){this.element=e};o.prototype=n;e.fn[t]=function(){var n=arguments;var r=this;this.each(function(){var s=e(this);var u=s.data("plugin-"+t);if(!u){u=new o(s);s.data("plugin-"+t,u);if(u._init){u._init.apply(u,n)}}else if(typeof n[0]=="string"&&n[0].charAt(0)!="_"&&typeof u[n[0]]=="function"){var a=Array.prototype.slice.call(n,1);var f=u[n[0]].apply(u,a);if(n[0]in i){r=f}}});return r}}var o=810,u=810,a=10;var f={stateStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},stateHoverStyles:{fill:"#33c",stroke:"#000",scale:[1.1,1.1]},stateHoverAnimation:500,stateSpecificStyles:{},stateSpecificHoverStyles:{},click:null,mouseover:null,mouseout:null,clickState:{},mouseoverState:{},mouseoutState:{},showLabels:true,labelWidth:20,labelHeight:15,labelGap:6,labelRadius:3,labelBackingStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},labelBackingHoverStyles:{fill:"#33c",stroke:"#000"},stateSpecificLabelBackingStyles:{},stateSpecificLabelBackingHoverStyles:{},labelTextStyles:{fill:"#fff",stroke:"none","font-weight":300,"stroke-width":0,"font-size":"10px"},labelTextHoverStyles:{},stateSpecificLabelTextStyles:{},stateSpecificLabelTextHoverStyles:{}};var l={_init:function(t){this.options={};e.extend(this.options,f,t);var n=this.element.width();var i=this.element.height();var s=this.element.width()/o;var l=this.element.height()/u;this.scale=Math.min(s,l);this.labelAreaWidth=Math.ceil(a/this.scale);var c=o+Math.max(0,this.labelAreaWidth-a);this.paper=r(this.element.get(0),c,u);this.paper.setSize(n,i);this.paper.setViewBox(350,0,c,u,false);this.stateHitAreas={};this.stateShapes={};this.topShape=null;this._initCreateStates();this.labelShapes={};this.labelTexts={};this.labelHitAreas={};if(this.options.showLabels){this._initCreateLabels()}},_initCreateStates:function(){var t=this.options.stateStyles;var n=this.paper;var r={DS:"M 937.44681,23.995272 V 121.25296 H 1098.6734 V 23.664303 H 937.42317 Z",PM:"m 937.73641,121.80851 v 95.40189 h 94.89029 v -95.42254 h -94.89029 z",CT:"m 1033.168,122.12891 v 95.40625 h 96.4793 v -95.69141 h -96.4832 z",AD:"m 933.80469,607.73047 0.39385,93.10074 H 1089.519 v -93.02874 z",ET:"m 1075.2227,701.49219 v 94.20312 h -7.4727 l -9.9375,-33.00781 V 758.25 l 7.375,-3.25 5.375,-5.375 v -2.0625 H 1069.5 l -0.4314,-1.6099 -0.4093,1.52759 h -5.0343 l -0.5,-3.41769 -1.0034,3.74461 -7.2466,3.06789 v 3 l 1.0625,3.5625 v 3.4375 l -7,0.4375 -12.6725,-40.19617 v -3.57973 l 2.4176,-1.39581 -3.922,-14.63719 z",MD:"m 1075.7813,701.61328 v 93.90395 l 93.3437,-0.36098 v -93.85938 l -93.3398,0.0742 z",MT:"m 1090.0547,607.93359 v 92.82032 h 94.6585 v -93.34766 l -94.6197,0.42937 z",DW:"m 1090.9102,513.625 1.0117,93.61719 57.0859,-0.27344 -7.0703,-28.78125 -2.9375,-4.875 V 569.75 h 1.75 v -4.5 h -1.3125 l 0.625,-0.75 21.1192,-5.65888 2.3808,5.90888 22.476,-6.02243 -0.601,-46.35257 -94.543,0.93359 z",GN:"m 933.79687,513.90234 0.11441,93.30351 H 1091.375 l -1.0078,-93.90116 -156.57033,0.5039 z",TR:"m 1020.2109,420.02734 0.012,93.47266 95.4023,-1 v -92.55591 h -95.4023 z",YK:"m 934.98047,419.78125 -1.025,93.48988 h 85.73203 v -93.54847 h -84.71003 z",LB:"m 1113.1953,324.74609 1.7685,94.68977 93.8487,-1.09211 0.6826,-94.70982 -96.2998,0.91685 z",HE:"m 1112.2695,218.32812 0.5938,105.6836 96.8196,-0.95231 -1.4954,-105.04379 -95.9141,0.0586 z",LM:"m 1015.9844,217.87891 v 106.17487 h 96.3388 l -0.5849,-105.99128 z",BE:"m 936.86719,217.85547 v 106.61815 h 78.58231 V 217.74219 h -78.58622 z",HY:"m 1016.1016,324.78125 3.789,94.62109 h 94.5318 l -1.7622,-94.80859 h -96.5665 z",CN:"m 936.57812,325 -1.25263,94.18174 h 84.01821 l -3.7616,-94.16674 z"};var i={};for(var s in r){i={};if(this.options.stateSpecificStyles[s]){e.extend(i,t,this.options.stateSpecificStyles[s])}else{i=t}this.stateShapes[s]=n.path(r[s]).attr(i);this.topShape=this.stateShapes[s];this.stateHitAreas[s]=n.path(r[s]).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.stateHitAreas[s].node.dataState=s}this._onClickProxy=e.proxy(this,"_onClick");this._onMouseOverProxy=e.proxy(this,"_onMouseOver"),this._onMouseOutProxy=e.proxy(this,"_onMouseOut");for(var s in this.stateHitAreas){this.stateHitAreas[s].toFront();e(this.stateHitAreas[s].node).bind("mouseout",this._onMouseOutProxy);e(this.stateHitAreas[s].node).bind("click",this._onClickProxy);e(this.stateHitAreas[s].node).bind("mouseover",this._onMouseOverProxy)}},_initCreateLabels:function(){var t=this.paper;var n=["DS", "PM", "CT", "BE", "LM", "HE", "CN", "HY", "LB", "YK", "TR", "GN", "DW", "AD", "MT", "ET", "MD"];var r=1700;var i=230;var s=this.options.labelWidth;var o=this.options.labelHeight;var u=this.options.labelGap;var a=this.options.labelRadius;var f=s/this.scale;var l=o/this.scale;var c=(s+u)/this.scale;var h=(o+u)/this.scale*.5;var p=a/this.scale;var d=this.options.labelBackingStyles;var v=this.options.labelTextStyles;var m={};for(var g=0,y,b,w;g<n.length;++g){w=n[g];y=(g+1)%2*c+r;b=g*h+i;m={};if(this.options.stateSpecificLabelBackingStyles[w]){e.extend(m,d,this.options.stateSpecificLabelBackingStyles[w])}else{m=d}this.labelShapes[w]=t.rect(y,b,f,l,p).attr(m);m={};if(this.options.stateSpecificLabelTextStyles[w]){e.extend(m,v,this.options.stateSpecificLabelTextStyles[w])}else{e.extend(m,v)}if(m["font-size"]){m["font-size"]=parseInt(m["font-size"])/this.scale+"px"}this.labelTexts[w]=t.text(y+f/2,b+l/2,w).attr(m);this.labelHitAreas[w]=t.rect(y,b,f,l,p).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.labelHitAreas[w].node.dataState=w}for(var w in this.labelHitAreas){this.labelHitAreas[w].toFront();e(this.labelHitAreas[w].node).bind("mouseout",this._onMouseOutProxy);e(this.labelHitAreas[w].node).bind("click",this._onClickProxy);e(this.labelHitAreas[w].node).bind("mouseover",this._onMouseOverProxy)}},_getStateFromEvent:function(e){var t=e.target&&e.target.dataState||e.dataState;return this._getState(t)},_getState:function(e){var t=this.stateShapes[e];var n=this.stateHitAreas[e];var r=this.labelShapes[e];var i=this.labelTexts[e];var s=this.labelHitAreas[e];return{shape:t,hitArea:n,name:e,labelBacking:r,labelText:i,labelHitArea:s}},_onMouseOut:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseout",e,t)},_defaultMouseOutAction:function(t){var n={};if(this.options.stateSpecificStyles[t.name]){e.extend(n,this.options.stateStyles,this.options.stateSpecificStyles[t.name])}else{n=this.options.stateStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingStyles[t.name]){e.extend(n,this.options.labelBackingStyles,this.options.stateSpecificLabelBackingStyles[t.name])}else{n=this.options.labelBackingStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_onClick:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("click",e,t)},_onMouseOver:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseover",e,t)},_defaultMouseOverAction:function(t){this.bringShapeToFront(t.shape);this.paper.safari();var n={};if(this.options.stateSpecificHoverStyles[t.name]){e.extend(n,this.options.stateHoverStyles,this.options.stateSpecificHoverStyles[t.name])}else{n=this.options.stateHoverStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingHoverStyles[t.name]){e.extend(n,this.options.labelBackingHoverStyles,this.options.stateSpecificLabelBackingHoverStyles[t.name])}else{n=this.options.labelBackingHoverStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_triggerEvent:function(t,n,r){var i=r.name;var s=false;var o=e.Event("usmap"+t+i);o.originalEvent=n;if(this.options[t+"State"][i]){s=this.options[t+"State"][i](o,r)===false}if(o.isPropagationStopped()){this.element.trigger(o,[r]);s=s||o.isDefaultPrevented()}if(!o.isPropagationStopped()){var u=e.Event("usmap"+t);u.originalEvent=n;if(this.options[t]){s=this.options[t](u,r)===false||s}if(!u.isPropagationStopped()){this.element.trigger(u,[r]);s=s||u.isDefaultPrevented()}}if(!s){switch(t){case"mouseover":this._defaultMouseOverAction(r);break;case"mouseout":this._defaultMouseOutAction(r);break}}return!s},trigger:function(e,t,n){t=t.replace("usmap","");e=e.toUpperCase();var r=this._getState(e);this._triggerEvent(t,n,r)},bringShapeToFront:function(e){if(this.topShape){e.insertAfter(this.topShape)}this.topShape=e}};var c=[];s(e,"usmap",l,c)})(jQuery,document,window,Raphael)
-
 campaignTrail_temp.cyoa = true
 
 function tunnel(new_q){
     e = campaignTrail_temp;
     return e.questions_json[e.questions_json.map(f=>f.pk).indexOf(new_q)];
 }
+
+hanceWinner = false;
+sheatsWinner = false;
 
 var primaryProcess = -5;
 
@@ -171,8 +172,13 @@ else if ((primaryProcess <= 1)) {
     }
   }
 }
+if (ans == 4391) {
+    hanceWinner = true;
+}
 if (ans == 4397) {
     campaignTrail_temp.running_mate_json = JSON.parse("[{\"model\": \"campaign_trail.running_mate\", \"pk\": 501, \"fields\": {\"candidate\": 152, \"running_mate\": 161}}]");
+
+    sheatsWinner = true;
 
     e.candidate_json[0].fields.first_name = "Morris"
     e.candidate_json[0].fields.last_name = "Sheats"
@@ -370,3 +376,155 @@ e.vpSwitcher = () => {
         changeGameDisp(false);
     })
   }
+
+// constructs endings based on header and pages
+construct = (a = 1) => {
+	
+    e.page = e.page + a < e.pages.length ? e.page + a : 0
+    let html = e.header;
+    html += e.pages[e.page] + "<br>";
+    if (e.page > 0) {
+    
+    html += `<button onclick='endingConstructor(a = -1)'>Back</button>`
+    }
+    if (e.page < e.pages.length - 1) {
+    
+    html += `<button onclick='endingConstructor(a = 1)'>Next</button>`
+    }
+    
+    for (i in e.executable) {
+    if (e.executable[i][0] == e.page) {
+        e.executable[i][1]();
+      
+    }
+    }
+    
+    if (e.image == true)
+  setTimeout(()=>{
+    candImg = $(".person_image")[0]
+    if (candImg) {
+      candImg.remove()
+    console.log("TRYING");
+    console.log("RESULTS UPDATED");
+    }
+  }, 10)
+  else if (e.image)
+  setTimeout(()=>{
+    candImg = $(".person_image")[0];
+    if (candImg) {
+      candImg.src = e.image;
+    console.log("TRYING");
+    console.log("RESULTS UPDATED");
+    }		
+  }, 10)
+  
+  return html;
+  }
+    
+  endingConstructor = (a = 1) => {
+    $("#final_results_description")[0].innerHTML = construct(a);
+  }
+
+    // ENDINGS -- this is slightly more reliable than the ending code method
+    
+    e.multiple_endings = true;
+    
+    e.header = "<h1>error</h1>";
+    e.pages = ["<p>This is an error handler</p>"];
+    e.page = 0;
+    
+  
+  var one = false;
+    endingPicker = (out, totv, aa, quickstats) => {
+    //out = "win", "loss", or "tie" for your candidate
+    //totv = total votes in entire election
+    //aa = all final overall results data
+    //quickstat = relevant data on candidate performance (format: your candidate's electoral vote count, your candidate's popular vote share, your candidate's raw vote total)
+    
+    /*
+    e.header = "<h2></h2>"
+    e.pages = ["<p></p>",
+            "<p></p>"]
+    */
+  
+    e.pages = []
+    e.header = "";
+    e.executable = []
+
+  //// standard endings [win, lose, and by how much] :3
+
+  if (sheatsWinner && quickstats[1] >= 50) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>It seemed like such a daunting task, this being your first forray into politics and all. Though it seems you've started off with a bang. Not only with successfully one-upping an established politician like Hance during the primary, but also beating back Bush and the Republicans at large.</p><p>While you've certainly kept some policy specifics to a minimum in exchange for broad rhetoric regarding religion, it seemed to have worked. Bush certainly seemed to be a bit complacent, especially with his large war chest, and you seemed to have taken advantage of that. Bush gives his concession and he plays it nice and polite, though you can sense the anger he has within him at losing to someone like you.</p><p>You'll be West Texas's next congressman, and people in-state and out-of-state will certainly be viewing you with interest. Your not the first preacher to break into politics, and perhaps this won't be the end of this. Time will tell...</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/HlgnD9H.png'})])
+  }
+
+  else if (sheatsWinner && quickstats[1] < 50) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>When you ran to take over Mahon's seat after his retirement, it seemed like an unlikely outcome. All potential Democrats saw little point in running after Hance announced his intentions of running for office, seeing more use taking over his seat in the Senate than challenging him. Though you persevered and were able to miraculously beat Hance and head to the general election.</p><p>Despite the enthusiasm for your candidacy among your base, it didn't necessarily translate outside of that and it would come to perpetually hinder your campaign. Bush on the other hand, was able to successfully portray himself as a common-sense conservative. Claiming your candidacy would do more to hinder West Texas than help it. It definitely didn't help that you often made your campaign about speaking of your experience with God than majorly talking policy that people would've wanted to hear.</p><p>The Democrats in Texas certainly aren't happy with this result, especially losing Krueger and Gammage's seat to prospective Republican candidates. As soon as your political prospects seemed to bloom, it just as fast has went down with a whimper.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/vK3p0Nv.png'})])
+  }
+
+  else if (hanceWinner && quickstats[1] >= 60.00) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>This is absolutely great news! Many onlookers already expected you to body up Bush during the general election, even after the whole primary business with Sheats candidacy proving to be troublesome. You dealt with him, and it seems you've also dealt with Bush as well.</p><p>It seems that Bush's constant campaign missteps seemed too much for the voters, and it reflects in this. Compared to Bush, you seemed like you got the hang of things. Like you really understand the people of West Texas, which makes sense. You've been working for some of them during your time in the state legislature. Though it seems Bush's outsider campaign didn't fully materialize, giving you a good win.</p><p>In conjunction with your victory, it seems Krueger was able to topple Tower's fourth term, a razor thin loss for Hill in the gubernatorial election, and Gammage keeping his seat from previous congressman Paul. At least this is a good victory.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/XtGDH4Z.png'})])
+  }
+
+  else if (hanceWinner && quickstats[1] >= 53.00 && quickstats[1] <= 59.99) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>Everything was going great. Mahon announced his intentions to retire from his 40 years of service for West Texas, giving you an opportunity to climb up the political ladder and jump into national politics. Many Democrats decided running against you was a bad idea, and decided to stay out of it. Except for one, an Odessa preacher named Morris Sheats. Despite having some momentum at first, his lack of values and controversies gave you a relatively easy primary victory.</p><p>When it came to facing off Bush however, it seemed like he never even had a chance. Stumbling out of the gate with his various gaffes and misstatements, its a wonder how he didn't absolutely crater. As compared to you, one of the people of West Texas up against some "out-of-towner", it made sense that a majority of voters would want you. This however doesn't make this victory any less sweet. Looks like you'll be West Texas's next congressman!</p><p>While your out celebrating, other Democrats weren't so lucky with Krueger failing to beat Tower for the Senate, Hill narrowly losing to Clements for the governor's office, and other House Democrats losing to Republicans. At least you can salivate at not being them.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/XtGDH4Z.png'})])
+  }
+
+  else if (hanceWinner && quickstats[1] >= 50.00 && quickstats[1] <= 52.99) {
+    one = true;
+    e.pages.push(`<h3>Congratulations, you've won the 19th district general election!</h3>
+    <p>You announced your intentions to run for the retiring Mahon's seat, and many Democrats in West Texas didn't want to challenge you for it instead looking to replace you for your Senate seat. Though there was one person that tried to challenge you, a preacher from Lubbock. Despite his attempt to challenge you during the primary, you dispatched him without a problem.</p><p>Facing off against Bush, he had a lot of weak points you could poke at. His upbringing from Connecticut and education from Yale, his demeanor being rather out of touch with a vast majority of people, and his candidacy being supported by out-of-state interests. All of that and more made sure that Bush didn't get an easy time during the race, and his inability to properly deal with these attacks head-on certainly proved to be a detriment. Though your victory is much smaller than anticipated, a victory is a victory nonetheless.</p><p>Despite your victory, it seems other Democrats weren't so lucky such as Krueger for the Senate, Hill for the governor's office, and Gammage and Wolff for their House races. At least you didn't join alongside them in defeat.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/XtGDH4Z.png'})])
+  }
+
+  else if (hanceWinner && quickstats[1] >= 48.00 && quickstats[1] <= 49.99) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>This is a bit unfortunate. It seemed like everything was looking up for your campaign. Sure you were able to deal with Sheats candidacy during the primary, but Bush seemed to be a different candidate entirely. You had everything there needed to be to be elected into this seat, but it unfortunately didn't materialize.</p><p>Bush on the other hand, seemed to campaign as a fresh outsider, somebody not inside the machine of politics. It also didn't help that his fervous campaigning seemed to dent the damage that is numerous weaknesses gave him. Seeming out of touch, not having the character of the people there, and generally just seeming a bit dumb at times. He made it all up for campaigning on the ground around the clock. Unfortunately you have to give a concession speech to him, though you'll probably think of one way to sting his ego a bit.</p><p>It seems other Democrats weren't so lucky either. With Krueger, Hill, Gammage, and Wolff also not beating their Republican opponents for a variety of reasons. You gave up your seat in the Senate, and you'll need to figure out something after this.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/RAxhhx6.png'})])
+  }
+
+  else if (hanceWinner && quickstats[1] >= 45.00 && quickstats[1] <= 47.99) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>This wasn't supposed to happen, it felt as if everything was destined for your victory. Swiftly dealing with the only Democrat that would challenge your coronation during the primary, it seemed that momentum from then on wouldn't culminate for victory.</p><p>Bush was the perfect candidate to really put the pressure on. A Yale boy who thinks he's a part of West Texas, it was the recipe for total victory. Worse than that, his campaign was filled with numerous missteps and errors. While you attempted to take advantage of his numerous faults, it just seemed that Bush was able to tackle these attacks and though it certainly wasn't always great counters, it seemed like enough to beat you and be West Texas's next congressman.</p><p>Just like you, other races with Democrats were similar in the situation of losing to their Republican opponents. Krueger for Senate, Hill for governor, Gammage for the 22nd, and Wolff for the 21st. You gave up your influence in the Senate to be elected into national office, but now you'll need to figure out where to go from here.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/o4wtWC4.png'})])
+  }
+
+  else if (hanceWinner && quickstats[1] >= 0.00 && quickstats[1] <= 44.99) {
+    one = true;
+    e.pages.push(`<h3>Sorry, you've lost the 19th district general election.</h3>
+    <p>How could've this happened? While potential defeat was always in the back of your mind, doubly so when Sheats attempted to contest your candidacy during the primary, you felt reassured in your electoral chances anyways. Besides, why not? You knew the people of West Texas, and have arguably helped them through your time in the legislature.</p><p>Instead, it seemed the vast majority of West Texans simply wanted a new voice. Not a Democrat as Mahon had been doing since Roosevelt's presidency, but instead a Republican. While you and Bush largely had little actual deviation in terms of broad issues, it seemd Bush was just able to channel this better than you were. With a few gaffes and missteps included, he has bested you and has given the region a "fresh new outlook" in terms of governance. Which will probably not be much.</p><p>To further add salt to the wound, Tower was able to win his fourth term in office against Krueger's candidacy, Clements was able to pass the 50% threshold against Hill, and two House Democrat candidates couldn't stop there Republican counterparts. It's unclear where to go from here, but you'll probably be able to figure it out in no time hopefully.</p>`)
+    //e.image = ""
+    e.executable.push([0, (() => {e.image = e.image = 'https://i.imgur.com/SaATAB3.png'})])
+  }
+
+  else {
+    one = true;
+    e.pages = ["<p>one</p><p>two</p><p>three</p><p>four</p><p>five</p><p>six</p><p>seven</p><p>eight</p>", "<p>nine</p><p>ten</p><p>eleven</p><p>twelve</p><p>thirteen</p><p>fourteen</p><p>fifteen</p><p>sixteen</p>", "<p>seventeen</p><p>eighteen</p><p>nineteen</p><p>twenty</p><p>twentyone</p><p>twentytwo</p><p>twentythree</p><p>twentyfour</p>", "<p>twentyfive</p><p>twentysix</p><p>twentyseven</p><p>twentyeight</p><p>twentynine</p><p>thirty</p><p>thirtyone</p><p>thirtytwo</p>", "<p>thirtythree</p><p>thirtyfour</p><p>thirtyfive</p><p>thirtysix</p><p>thirtyseven</p><p>thirtyeight</p><p>thirtynine</p><p>fourty</p>", "<p>fourtyone</p><p>fourtytwo</p><p>fourtythree</p><p>fourtyfour</p><p>fourtyfive</p><p>fourtysix</p><p>fourtyseven</p><p>fourtyeight</p>", "<p>fourtynine</p><p>fifty</p><p>fiftyone</p><p>fiftytwo</p><p>fiftythree</p><p>fiftyfour</p><p>fiftyfive</p><p>fiftysix</p>", "<p>fiftyseven</p><p>fiftyeight</p><p>fiftynine</p><p>sixty</p><p>sixtyone</p><p>sixtytwo</p><p>sixtythree</p><p>sixtyfour</p>", "<p>sixtyfive</p><p>sixtysix</p><p>sixtyseven</p><p>sixtyeight</p><p>sixtynine</p><p>seventy</p><p>seventyone</p><p>seventytwo</p>", "<p>seventythree</p><p>seventyfour</p><p>seventyfive</p><p>seventysix</p><p>seventyseven</p><p>seventyeight</p><p>seventynine</p><p>eighty</p>", "<p>eightyone</p><p>eightytwo</p><p>eightythree</p><p>eightyfour</p><p>eightyfive</p><p>eightysix</p><p>eightyseven</p><p>eightyeight</p>", "<p>eightynine</p><p>ninety</p><p>ninetyone</p><p>ninetytwo</p><p>ninetythree</p><p>ninetyfour</p><p>ninetyfive</p><p>ninetysix</p>", "<p>ninetyseven</p><p>ninetyeight</p><p>ninetynine</p><p>onehundred</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>", "<p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>", "<p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>", "<p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p><p>.....</p>"];
+    e.executable.push([0, (() => {e.image = e.image = ''})])
+  }
+  
+  return construct(0);
+    
+}
+
+(function(e,t,n,r,i){function s(e,t,n,r){r=r instanceof Array?r:[];var i={};for(var s=0;s<r.length;s++){i[r[s]]=true}var o=function(e){this.element=e};o.prototype=n;e.fn[t]=function(){var n=arguments;var r=this;this.each(function(){var s=e(this);var u=s.data("plugin-"+t);if(!u){u=new o(s);s.data("plugin-"+t,u);if(u._init){u._init.apply(u,n)}}else if(typeof n[0]=="string"&&n[0].charAt(0)!="_"&&typeof u[n[0]]=="function"){var a=Array.prototype.slice.call(n,1);var f=u[n[0]].apply(u,a);if(n[0]in i){r=f}}});return r}}var o=810,u=810,a=10;var f={stateStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},stateHoverStyles:{fill:"#33c",stroke:"#000",scale:[1.1,1.1]},stateHoverAnimation:500,stateSpecificStyles:{},stateSpecificHoverStyles:{},click:null,mouseover:null,mouseout:null,clickState:{},mouseoverState:{},mouseoutState:{},showLabels:true,labelWidth:20,labelHeight:15,labelGap:6,labelRadius:3,labelBackingStyles:{fill:"#333",stroke:"#666","stroke-width":1,"stroke-linejoin":"round",scale:[1,1]},labelBackingHoverStyles:{fill:"#33c",stroke:"#000"},stateSpecificLabelBackingStyles:{},stateSpecificLabelBackingHoverStyles:{},labelTextStyles:{fill:"#fff",stroke:"none","font-weight":300,"stroke-width":0,"font-size":"10px"},labelTextHoverStyles:{},stateSpecificLabelTextStyles:{},stateSpecificLabelTextHoverStyles:{}};var l={_init:function(t){this.options={};e.extend(this.options,f,t);var n=this.element.width();var i=this.element.height();var s=this.element.width()/o;var l=this.element.height()/u;this.scale=Math.min(s,l);this.labelAreaWidth=Math.ceil(a/this.scale);var c=o+Math.max(0,this.labelAreaWidth-a);this.paper=r(this.element.get(0),c,u);this.paper.setSize(n,i);this.paper.setViewBox(350,0,c,u,false);this.stateHitAreas={};this.stateShapes={};this.topShape=null;this._initCreateStates();this.labelShapes={};this.labelTexts={};this.labelHitAreas={};if(this.options.showLabels){this._initCreateLabels()}},_initCreateStates:function(){var t=this.options.stateStyles;var n=this.paper;var r={DS:"M 937.44681,23.995272 V 121.25296 H 1098.6734 V 23.664303 H 937.42317 Z",PM:"m 937.73641,121.80851 v 95.40189 h 94.89029 v -95.42254 h -94.89029 z",CT:"m 1033.168,122.12891 v 95.40625 h 96.4793 v -95.69141 h -96.4832 z",AD:"m 933.80469,607.73047 0.39385,93.10074 H 1089.519 v -93.02874 z",ET:"m 1075.2227,701.49219 v 94.20312 h -7.4727 l -9.9375,-33.00781 V 758.25 l 7.375,-3.25 5.375,-5.375 v -2.0625 H 1069.5 l -0.4314,-1.6099 -0.4093,1.52759 h -5.0343 l -0.5,-3.41769 -1.0034,3.74461 -7.2466,3.06789 v 3 l 1.0625,3.5625 v 3.4375 l -7,0.4375 -12.6725,-40.19617 v -3.57973 l 2.4176,-1.39581 -3.922,-14.63719 z",MD:"m 1075.7813,701.61328 v 93.90395 l 93.3437,-0.36098 v -93.85938 l -93.3398,0.0742 z",MT:"m 1090.0547,607.93359 v 92.82032 h 94.6585 v -93.34766 l -94.6197,0.42937 z",DW:"m 1090.9102,513.625 1.0117,93.61719 57.0859,-0.27344 -7.0703,-28.78125 -2.9375,-4.875 V 569.75 h 1.75 v -4.5 h -1.3125 l 0.625,-0.75 21.1192,-5.65888 2.3808,5.90888 22.476,-6.02243 -0.601,-46.35257 -94.543,0.93359 z",GN:"m 933.79687,513.90234 0.11441,93.30351 H 1091.375 l -1.0078,-93.90116 -156.57033,0.5039 z",TR:"m 1020.2109,420.02734 0.012,93.47266 95.4023,-1 v -92.55591 h -95.4023 z",YK:"m 934.98047,419.78125 -1.025,93.48988 h 85.73203 v -93.54847 h -84.71003 z",LB:"m 1113.1953,324.74609 1.7685,94.68977 93.8487,-1.09211 0.6826,-94.70982 -96.2998,0.91685 z",HE:"m 1112.2695,218.32812 0.5938,105.6836 96.8196,-0.95231 -1.4954,-105.04379 -95.9141,0.0586 z",LM:"m 1015.9844,217.87891 v 106.17487 h 96.3388 l -0.5849,-105.99128 z",BE:"m 936.86719,217.85547 v 106.61815 h 78.58231 V 217.74219 h -78.58622 z",HY:"m 1016.1016,324.78125 3.789,94.62109 h 94.5318 l -1.7622,-94.80859 h -96.5665 z",CN:"m 936.57812,325 -1.25263,94.18174 h 84.01821 l -3.7616,-94.16674 z"};var i={};for(var s in r){i={};if(this.options.stateSpecificStyles[s]){e.extend(i,t,this.options.stateSpecificStyles[s])}else{i=t}this.stateShapes[s]=n.path(r[s]).attr(i);this.topShape=this.stateShapes[s];this.stateHitAreas[s]=n.path(r[s]).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.stateHitAreas[s].node.dataState=s}this._onClickProxy=e.proxy(this,"_onClick");this._onMouseOverProxy=e.proxy(this,"_onMouseOver"),this._onMouseOutProxy=e.proxy(this,"_onMouseOut");for(var s in this.stateHitAreas){this.stateHitAreas[s].toFront();e(this.stateHitAreas[s].node).bind("mouseout",this._onMouseOutProxy);e(this.stateHitAreas[s].node).bind("click",this._onClickProxy);e(this.stateHitAreas[s].node).bind("mouseover",this._onMouseOverProxy)}},_initCreateLabels:function(){var t=this.paper;var n=["DS", "PM", "CT", "BE", "LM", "HE", "CN", "HY", "LB", "YK", "TR", "GN", "DW", "AD", "MT", "ET", "MD"];var r=1700;var i=230;var s=this.options.labelWidth;var o=this.options.labelHeight;var u=this.options.labelGap;var a=this.options.labelRadius;var f=s/this.scale;var l=o/this.scale;var c=(s+u)/this.scale;var h=(o+u)/this.scale*.5;var p=a/this.scale;var d=this.options.labelBackingStyles;var v=this.options.labelTextStyles;var m={};for(var g=0,y,b,w;g<n.length;++g){w=n[g];y=(g+1)%2*c+r;b=g*h+i;m={};if(this.options.stateSpecificLabelBackingStyles[w]){e.extend(m,d,this.options.stateSpecificLabelBackingStyles[w])}else{m=d}this.labelShapes[w]=t.rect(y,b,f,l,p).attr(m);m={};if(this.options.stateSpecificLabelTextStyles[w]){e.extend(m,v,this.options.stateSpecificLabelTextStyles[w])}else{e.extend(m,v)}if(m["font-size"]){m["font-size"]=parseInt(m["font-size"])/this.scale+"px"}this.labelTexts[w]=t.text(y+f/2,b+l/2,w).attr(m);this.labelHitAreas[w]=t.rect(y,b,f,l,p).attr({fill:"#000","stroke-width":0,opacity:0,cursor:"pointer"});this.labelHitAreas[w].node.dataState=w}for(var w in this.labelHitAreas){this.labelHitAreas[w].toFront();e(this.labelHitAreas[w].node).bind("mouseout",this._onMouseOutProxy);e(this.labelHitAreas[w].node).bind("click",this._onClickProxy);e(this.labelHitAreas[w].node).bind("mouseover",this._onMouseOverProxy)}},_getStateFromEvent:function(e){var t=e.target&&e.target.dataState||e.dataState;return this._getState(t)},_getState:function(e){var t=this.stateShapes[e];var n=this.stateHitAreas[e];var r=this.labelShapes[e];var i=this.labelTexts[e];var s=this.labelHitAreas[e];return{shape:t,hitArea:n,name:e,labelBacking:r,labelText:i,labelHitArea:s}},_onMouseOut:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseout",e,t)},_defaultMouseOutAction:function(t){var n={};if(this.options.stateSpecificStyles[t.name]){e.extend(n,this.options.stateStyles,this.options.stateSpecificStyles[t.name])}else{n=this.options.stateStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingStyles[t.name]){e.extend(n,this.options.labelBackingStyles,this.options.stateSpecificLabelBackingStyles[t.name])}else{n=this.options.labelBackingStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_onClick:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("click",e,t)},_onMouseOver:function(e){var t=this._getStateFromEvent(e);if(!t.hitArea){return}return!this._triggerEvent("mouseover",e,t)},_defaultMouseOverAction:function(t){this.bringShapeToFront(t.shape);this.paper.safari();var n={};if(this.options.stateSpecificHoverStyles[t.name]){e.extend(n,this.options.stateHoverStyles,this.options.stateSpecificHoverStyles[t.name])}else{n=this.options.stateHoverStyles}t.shape.animate(n,this.options.stateHoverAnimation);if(t.labelBacking){var n={};if(this.options.stateSpecificLabelBackingHoverStyles[t.name]){e.extend(n,this.options.labelBackingHoverStyles,this.options.stateSpecificLabelBackingHoverStyles[t.name])}else{n=this.options.labelBackingHoverStyles}t.labelBacking.animate(n,this.options.stateHoverAnimation)}},_triggerEvent:function(t,n,r){var i=r.name;var s=false;var o=e.Event("usmap"+t+i);o.originalEvent=n;if(this.options[t+"State"][i]){s=this.options[t+"State"][i](o,r)===false}if(o.isPropagationStopped()){this.element.trigger(o,[r]);s=s||o.isDefaultPrevented()}if(!o.isPropagationStopped()){var u=e.Event("usmap"+t);u.originalEvent=n;if(this.options[t]){s=this.options[t](u,r)===false||s}if(!u.isPropagationStopped()){this.element.trigger(u,[r]);s=s||u.isDefaultPrevented()}}if(!s){switch(t){case"mouseover":this._defaultMouseOverAction(r);break;case"mouseout":this._defaultMouseOutAction(r);break}}return!s},trigger:function(e,t,n){t=t.replace("usmap","");e=e.toUpperCase();var r=this._getState(e);this._triggerEvent(t,n,r)},bringShapeToFront:function(e){if(this.topShape){e.insertAfter(this.topShape)}this.topShape=e}};var c=[];s(e,"usmap",l,c)})(jQuery,document,window,Raphael)
